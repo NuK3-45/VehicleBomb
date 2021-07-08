@@ -1,3 +1,6 @@
+-- Config --
+local detonateRadius = 175
+
 -- Place Vehicle Bomb --
 RegisterCommand('placecarbomb', function()
 
@@ -66,10 +69,10 @@ RegisterCommand('detonatecarbomb', function()
     local playerLoc = GetEntityCoords(getPlayerPed)
     local vehiclePos = GetEntityCoords(playerLastVehicle)
     
-    if doesCarHaveBomb == 1 and GetDistanceBetweenCoords(vehiclePos.x, vehiclePos.y, vehiclePos.z, playerLoc.x, playerLoc.y, playerLoc.z) < 175 then
+    if doesCarHaveBomb == 1 and GetDistanceBetweenCoords(vehiclePos.x, vehiclePos.y, vehiclePos.z, playerLoc.x, playerLoc.y, playerLoc.z) < detonateRadius then
         DetonateVehiclePhoneExplosiveDevice(playerLastVehicle)
         exports.pNotify:SendNotification({text = "Your car bomb has exploded.", type = "success", timeout = (10000), layout = "bottomCenter",})
-    elseif doesCarHaveBomb == 1 and GetDistanceBetweenCoords(vehiclePos.x, vehiclePos.y, vehiclePos.z, playerLoc.x, playerLoc.y, playerLoc.z) > 100 then
+    elseif doesCarHaveBomb == 1 and GetDistanceBetweenCoords(vehiclePos.x, vehiclePos.y, vehiclePos.z, playerLoc.x, playerLoc.y, playerLoc.z) > detonateRadius then
         exports.pNotify:SendNotification({text = "You are too far away from the vehicle.", type = "error", timeout = (10000), layout = "bottomCenter",})
     else
         exports.pNotify:SendNotification({text = "The vehicle doesn't have a car bomb.", type = "error", timeout = (10000), layout = "bottomCenter",})
