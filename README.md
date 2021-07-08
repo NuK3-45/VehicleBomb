@@ -8,5 +8,6 @@
 
 ### Install Instructions
 - Unzip the VehicleBomb folder and drag it into your "resources" folder
+- If you would like to change the detonation radius, change detonateRadius on line 2
 - Add "start VehicleBomb" to your server.cfg
 - Test if the script works
