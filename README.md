@@ -6,6 +6,9 @@
 - To remove a car bomb, do /removecarbomb while inside of a customs shop such as Benny's, LSC, or Beekers Garage.
 - To detonate a car bomb, do /detonatecarbomb while within the set radius. If you're too far away from the vehicle you can't detonate the bomb.
 
+### Credits
+- HypnoticSiege for the version checker
+
 ### Install Instructions
 - Unzip the VehicleBomb folder and drag it into your "resources" folder
 - If you would like to change the detonation radius, change detonateRadius on line 2
